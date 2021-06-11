@@ -18,11 +18,11 @@
 
    No qual,
 
-   <nome_da_imagem> = Ao nome que você deseja para sua imagem docker;
+   **<nome_da_imagem>** = Ao nome que você deseja para sua imagem docker;
 
-   <diretório_base> = É o caminho no qual você deu clone no repositório do dataset, por exemplo, se quando for realizar o passo 1 estiver no diretório "/home/CIN/jaam", é ele que será entregue.
+   **<diretório_base>** = É o caminho no qual você deu clone no repositório do dataset, por exemplo, se quando for realizar o passo 1 estiver no diretório "/home/CIN/jaam", é ele que será entregue.
 
-   <diretório_csv_mergedataset> = Esse é o caminho relativo do arquivo csv que possui as informações dos cenários de merge, no exemplo do passo, como nosso dataset, seria o seguinte: "mergedataset/semantic-conflicts/results_semantic_study.csv"
+   **<diretório_csv_mergedataset>** = Esse é o caminho relativo do arquivo csv que possui as informações dos cenários de merge, no exemplo do passo, como nosso dataset, seria o seguinte: "mergedataset/semantic-conflicts/results_semantic_study.csv"
 
 3. Executar um contêiner da imagem criada
 
@@ -34,8 +34,8 @@
 
    No qual, 
 
-   <output_host> = É o diretório na sua máquina na qual você deseja que fiquem os arquivos de execução da ferramenta
+   **<output_host>** = É o diretório na sua máquina na qual você deseja que fiquem os arquivos de execução da ferramenta
 
-   <diretório_base> = É o mesmo explicado no passo anterior
+   **<diretório_base>** = É o mesmo explicado no passo anterior
 
-   <nome_da_imagem> = Também o mesmo que foi usado no passo anterior.
+   **<nome_da_imagem>** = Também o mesmo que foi usado no passo anterior.
