@@ -38,4 +38,4 @@ ENV PATH="$JAVA_HOME/bin:${PATH}"
 ENV PYTHONPATH="$DIRPATH/infra/SMAT"
 
 #Mudança do diretório de trabalho, após as atualizações da infra, será necessário mudar isso
-WORKDIR $DIRPATH/infra/SMAT
+WORKDIR $DIRPATH/output/output
