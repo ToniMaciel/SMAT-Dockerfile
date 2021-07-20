@@ -1,7 +1,7 @@
 #!/bin/bash
 #Clone dataset and generate csv
 export back=$PWD
-if [! -d "mergedataset"]; then git clone https://github.com/spgroup/mergedataset; fi
+if [ ! -d "mergedataset" ]; then git clone https://github.com/spgroup/mergedataset; fi
 cd mergedataset
 git checkout c8b965f
 cd semantic-conflicts
