@@ -16,19 +16,22 @@ This repository serves to replicate the SMAT project, which aims to detect seman
 
 - To better understand what is inside of the container, it follows a tree representation of his content:
 
-  `|-- $PWD`
+  ```
+  |-- $PWD
 
-  `|	|-- SMAT-Dockerfile`
+  |	|-- SMAT-Dockerfile
 
-  `|	|	|-- mergedataset`
+  |	|	|-- mergedataset
 
-  `|	|		|-- (dataset files)`
+  |	|		|-- (dataset files)
 
-  `|	|	|-- infra`
+  |	|	|-- infra
 
-  `|	|	|   |-- (SMAT tool files)`
+  |	|	|   |-- (SMAT tool files)
 
-  `|	|	|-- output`			
+  |	|	|-- output 
+  
+  ```			
 
   Where $PWD is the path in your computer to where you clone this project.
 
