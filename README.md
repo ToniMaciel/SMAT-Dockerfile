@@ -23,11 +23,11 @@ This repository serves to replicate the SMAT project, which aims to detect seman
 
   |	|	|-- mergedataset
 
-  |	|		|-- (dataset files)
+  |	|	  |-- (dataset files)
 
   |	|	|-- infra
 
-  |	|	|   |-- (SMAT tool files)
+  |	|	  |-- (SMAT tool files)
 
   |	|	|-- output 
   
