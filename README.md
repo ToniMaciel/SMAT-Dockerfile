@@ -1,41 +1,52 @@
-## Passo para execução
+### Instructions to replicate study 
 
-1. Clonar o dataset que será usado
+------
 
-   - Clone o repositório [MergeDataSet](https://github.com/spgroup/mergedataset).
-   - Faça um checkout para o commit  [c8b965f](https://github.com/spgroup/mergedataset/commit/c8b965f71624f0ee3bec197d37ffbb2a9aaba97b).
-   - Execute o script [get_sample.py](https://github.com/spgroup/mergedataset/blob/c8b965f71624f0ee3bec197d37ffbb2a9aaba97b/semantic-conflicts/get_sample.py).
-   - Como resultado, o arquivo **results_semantic_study.csv** será criado com as informações do dataset.
+This repository serves to replicate the SMAT project, which aims to detect semantic conflicts by generating and running test suites on merge scenarios.
 
-2. Clonar o Dockerfile e dar build
+#### Getting started
 
-   - Clone o Dockerfile desse repositório
-   - No diretório em que se encontra o Dockerfile, execute o seguinte comando:
+------
 
-   ```bash
-   docker build -t <nome_da_imagem> --build-arg DIRPATH=<diretório_base> --build-arg DEST_CSV=<diretório_csv_mergedataset> .
-   ```
+- Clone the project locally using the command in your prompt: `git clone https://github.com/ToniMaciel/SMAT-Dockerfile`
 
-   No qual,
+- After cloning, inside of directory SMAT-Dockerfile, use the following command to initiate the replication: `bash replicate.sh`
 
-   **<nome_da_imagem>** = Ao nome que você deseja para sua imagem docker;
+-  After this, the bash file will clone the dataset for the study and build a Docker container with the SMAT tool. Once all the steps are done, it will open the prompt of the container. 
 
-   **<diretório_base>** = É o caminho no qual você deu clone no repositório do dataset, por exemplo, se quando for realizar o passo 1 estiver no diretório "/home/CIN/jaam", é ele que será entregue.
+- To better understand what is inside of the container, it follows a tree representation of his content:
 
-   **<diretório_csv_mergedataset>** = Esse é o caminho relativo do arquivo csv que possui as informações dos cenários de merge, no exemplo do passo, como nosso dataset, seria o seguinte: "mergedataset/semantic-conflicts/results_semantic_study.csv"
+  ```
+  |-- $PWD
 
-3. Executar um contêiner da imagem criada
+  |	|-- SMAT-Dockerfile
 
-   -  Execute o seguinte comando:
+  |	|	|-- mergedataset
 
-   ```bash
-   docker run -v <output_host>:<diretório_base>/output -v <diretório_base>/mergedataset:<diretório_base>/mergedataset <nome_da_imagem> <diretório_base>/infra/SMAT/nimrod/proj/semantic_study.py
-   ```
+  |	|	  |-- (dataset files)
 
-   No qual, 
+  |	|	|-- infra
 
-   **<output_host>** = É o diretório na sua máquina na qual você deseja que fiquem os arquivos de execução da ferramenta
+  |	|	  |-- (SMAT tool files)
 
-   **<diretório_base>** = É o mesmo explicado no passo anterior
+  |	|	|-- output 
+  
+  ```			
 
-   **<nome_da_imagem>** = Também o mesmo que foi usado no passo anterior.
+  Where $PWD is the path in your computer to where you clone this project.
+
+- Once the prompt of the container is open, you will be at the output directory. Be free to change files in the dataset or the SMAT tool, but if you want to analyze the output of the tool's execution after closing the container, you must do this execution in the output directory.
+
+- To execute the tool, use the following command: `python3 $SMAT` 
+
+- You can see the output in *output-test-dest* directory where you did the execution.
+
+#### Attentions When Using Windows
+
+------
+
+If you use Windows as your operating system, when you execute the bash file, you will probably receive an error message due to the size of a few file names in the mergedataset repository. This problem will make it impossible for you to clone this repository.
+
+To resolve this, you must install the Windows Subsystem for Linux (WSL); just follow the steps outlined in this [guide](https://docs.microsoft.com/pt-br/windows/wsl/install-win10). 
+
+To execute the project, we advise you to use VSCode, because it has extensions to integrate with WSL. Once WSL is installed, when opening VSCode, a message will be displayed to download the Remote - WSL extension. With it, it is possible to edit all the files that are in WSL through VSCode and execute the project via terminal.
